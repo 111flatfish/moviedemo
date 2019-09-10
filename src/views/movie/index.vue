@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Header></Header>
+        <Header title="比目鱼电影"></Header>
 
         <Toolbar></Toolbar>
     </div>
