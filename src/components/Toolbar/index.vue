@@ -1,9 +1,9 @@
 <template>
     <footer id="footer">
         <ul>
-            <router-link tag="li" to="/movie"><span class="icon-dianying"><span class="path1"></span><span class="path2"></span></span><p>电影</p></router-link tag="li" to="/movie">
-            <router-link tag="li" to="/cinema"><span class="icon-yingyuan"><span class="path1"></span><span class="path2"></span></span><p>影院</p></router-link tag="li" to="/movie">
-            <router-link tag="li" to="/mine"><span class="icon-wode"><span class="path1"></span><span class="path2"></span></span><p>我的</p></router-link tag="li" to="/movie">
+            <router-link tag="li" to="/movie"><i class="iconfont icon-dianying"></i><p>电影</p></router-link>
+            <router-link tag="li" to="/cinema"><i class="iconfont icon-yingyuan"></i><p>影院</p></router-link>
+            <router-link tag="li" to="/mine"><i class="iconfont icon-wode"></i><p>我的</p></router-link>
         </ul>
     </footer>
 </template>

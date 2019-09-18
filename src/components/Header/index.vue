@@ -23,6 +23,7 @@
     color: #fff;
     background-color: orange;
     border: 1px solid orange;
+    border-bottom: none;
     position: relative;
     left: 0;
     top: 0;
