@@ -10,7 +10,7 @@
             <h3>电影/电视剧/综艺</h3>
             <ul>
                 <li>
-                    <div class="img"><img src="/images/movie_1.jpg" alt=""></div>
+                    <div class="img"><img src="../../../public/images/movie_1.jpg" alt=""></div>
                     <div class="info">
                         <p><span>无名之辈</span></p>
                         <p>A Cool Fish</p>
@@ -19,7 +19,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="img"><img src="/images/movie_1.jpg" alt=""></div>
+                    <div class="img"><img src="../../../public/images/movie_1.jpg" alt=""></div>
                     <div class="info">
                         <p><span>无名之辈</span></p>
                         <p>A Cool Fish</p>
@@ -28,7 +28,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="img"><img src="/images/movie_1.jpg" alt=""></div>
+                    <div class="img"><img src="../../../public/images/movie_1.jpg" alt=""></div>
                     <div class="info">
                         <p><span>无名之辈</span></p>
                         <p>A Cool Fish</p>

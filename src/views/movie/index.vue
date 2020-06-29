@@ -2,14 +2,14 @@
     <div>
         <Header title="比目鱼电影"></Header>
             <div class="movie_menu">
-                <router-link to="/movie/city" tag="div" class="city_name">
+                <router-link to="/movie/City" tag="div" class="city_name">
                     <span>大连</span><i class="iconfont icon-city"></i>
                 </router-link>
                 <div class="hot_swtich">
-                    <router-link to="/movie/nowplaying" tag="div" class="hot_item active">正在热映</router-link>
-                    <router-link to="/movie/comingsoon" tag="div"  class="hot_item">即将上映</router-link>
+                    <router-link to="/movie/Nowplaying" tag="div" class="hot_item active">正在热映</router-link>
+                    <router-link to="/movie/ComingSoon" tag="div"  class="hot_item">即将上映</router-link>
                 </div>
-                <router-link to="/movie/search" tag="div" class="search_entry">
+                <router-link to="/movie/Search" tag="div" class="search_entry">
                     <i class="iconfont icon-search"></i>
                 </router-link>
             </div>

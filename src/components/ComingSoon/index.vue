@@ -2,7 +2,7 @@
     <div class="movie_body">
         <ul>
             <li>
-                <div class="pic_show"><img src="/images/movie_1.jpg" alt=""></div>
+                <div class="pic_show"><img src="../../../public/images/movie_1.jpg" alt=""></div>
                 <div class="info_list">
                     <h2>无名之辈</h2>
                     <p>观众评 <span class="grade">9.2</span></p>
@@ -12,7 +12,7 @@
                 <div class="btn_pre">预订</div>
             </li>
             <li>
-                <div class="pic_show"><img src="/images/movie_2.jpg" alt=""></div>
+                <div class="pic_show"><img src="../../../public/images/movie_2.jpg" alt=""></div>
                 <div class="info_list">
                     <h2>毒液：致命守护者</h2>
                     <p>观众评 <span class="grade">9.3</span></p>
@@ -22,7 +22,7 @@
                 <div class="btn_pre">预订</div>
             </li>
             <li>
-                <div class="pic_show"><img src="/images/movie_3.jpg" alt=""></div>
+                <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
                 <div class="info_list">
                     <h2>无名之辈</h2>
                     <p>观众评 <span class="grade">9.2</span></p>
@@ -32,7 +32,7 @@
                 <div class="btn_pre">预订</div>
             </li>
             <li>
-                <div class="pic_show"><img src="/images/movie_1.jpg" alt=""></div>
+                <div class="pic_show"><img src="../../../public/images/movie_1.jpg" alt=""></div>
                 <div class="info_list">
                     <h2>无名之辈</h2>
                     <p>观众评 <span class="grade">9.2</span></p>
@@ -42,7 +42,7 @@
                 <div class="btn_pre">预订</div>
             </li>
             <li>
-                <div class="pic_show"><img src="/images/movie_2.jpg" alt=""></div>
+                <div class="pic_show"><img src="../../../public/images/movie_2.jpg" alt=""></div>
                 <div class="info_list">
                     <h2>无名之辈</h2>
                     <p>观众评 <span class="grade">9.2</span></p>
@@ -52,7 +52,7 @@
                 <div class="btn_pre">预订</div>
             </li>
             <li>
-                <div class="pic_show"><img src="/images/movie_3.jpg" alt=""></div>
+                <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
                 <div class="info_list">
                     <h2>无名之辈</h2>
                     <p>观众评 <span class="grade">9.2</span></p>
