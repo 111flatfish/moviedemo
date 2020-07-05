@@ -1,98 +1,117 @@
 <template>
-   <div class="city_body">
-       <div class="city_list">
-           <div class="city_hot">
-               <h2>热门城市</h2>
-               <ul>
-                   <li>北京</li>
-                   <li>上海</li>
-                   <li>广州</li>
-                   <li>深圳</li>
-                   <li>重庆</li>
-                   <li>河北</li>
-               </ul>
-           </div>
-           <div class="city_sort">
-               <div>
-                   <h2>A</h2>
-                   <ul>
-                       <li>阿拉善盟</li>
-                       <li>鞍山</li>
-                       <li>安庆</li>
-                       <li>安阳</li>
-                   </ul>
-               </div>
-               <div>
-                   <h2>B</h2>
-                   <ul>
-                       <li>北京</li>
-                       <li>宝定</li>
-                       <li>蚌埠</li>
-                       <li>包头</li>
-                   </ul>
-               </div>
-               <div>
-               <h2>A</h2>
-               <ul>
-                   <li>阿拉善盟</li>
-                   <li>鞍山</li>
-                   <li>安庆</li>
-                   <li>安阳</li>
-               </ul>
-           </div>
-               <div>
-               <h2>A</h2>
-               <ul>
-                   <li>阿拉善盟</li>
-                   <li>鞍山</li>
-                   <li>安庆</li>
-                   <li>安阳</li>
-               </ul>
-           </div>
-               <div>
-                   <h2>B</h2>
-                   <ul>
-                       <li>北京</li>
-                       <li>宝定</li>
-                       <li>蚌埠</li>
-                       <li>包头</li>
-                   </ul>
-               </div>
-               <div>
-                   <h2>A</h2>
-                   <ul>
-                       <li>阿拉善盟</li>
-                       <li>鞍山</li>
-                       <li>安庆</li>
-                       <li>安阳</li>
-                   </ul>
-               </div>
-               <div>
-                   <h2>B</h2>
-                   <ul>
-                       <li>北京</li>
-                       <li>宝定</li>
-                       <li>蚌埠</li>
-                       <li>包头</li>
-                   </ul>
-               </div>
-           </div>
-       </div>
-       <div class="city_index">
-           <ul>
-               <li>A</li>
-               <li>B</li>
-               <li>C</li>
-               <li>D</li>
-               <li>E</li>
-           </ul>
-       </div>
-   </div>
+    <div>
+<!--        <Scroller>-->
+            <div class="city_body">
+                <Loading v-if="isLoading"></Loading>
+                <div  v-else class="city_list">
+                    <div class="city_hot">
+                        <h2>热门城市</h2>
+                        <ul>
+                            <li>北京</li>
+                            <li>上海</li>
+                            <li>广州</li>
+                            <li>深圳</li>
+                            <li>重庆</li>
+                            <li>河北</li>
+                        </ul>
+                    </div>
+                    <div class="city_sort">
+                        <div>
+                            <h2>A</h2>
+                            <ul>
+                                <li>阿拉善盟</li>
+                                <li>鞍山</li>
+                                <li>安庆</li>
+                                <li>安阳</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2>B</h2>
+                            <ul>
+                                <li>北京</li>
+                                <li>宝定</li>
+                                <li>蚌埠</li>
+                                <li>包头</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2>A</h2>
+                            <ul>
+                                <li>阿拉善盟</li>
+                                <li>鞍山</li>
+                                <li>安庆</li>
+                                <li>安阳</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2>A</h2>
+                            <ul>
+                                <li>阿拉善盟</li>
+                                <li>鞍山</li>
+                                <li>安庆</li>
+                                <li>安阳</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2>B</h2>
+                            <ul>
+                                <li>北京</li>
+                                <li>宝定</li>
+                                <li>蚌埠</li>
+                                <li>包头</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2>A</h2>
+                            <ul>
+                                <li>阿拉善盟</li>
+                                <li>鞍山</li>
+                                <li>安庆</li>
+                                <li>安阳</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h2>B</h2>
+                            <ul>
+                                <li>北京</li>
+                                <li>宝定</li>
+                                <li>蚌埠</li>
+                                <li>包头</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="city_index">
+                    <ul>
+                        <li>A</li>
+                        <li>B</li>
+                        <li>C</li>
+                        <li>D</li>
+                        <li>E</li>
+                    </ul>
+                </div>
+            </div>
+<!--        </Scroller>-->
+    </div>
+
+
 </template>
 
 <script>
     export default {
-        name: "City"
+        name: "City",
+        data(){
+          return {
+              cityList:[],
+              hotCity:[],
+              isLoading:true
+          }
+        },
+        mounted(){
+            setTimeout(()=>{
+                this.isLoading= false;
+            },500)
+        }
     }
 </script>
 
@@ -100,10 +119,13 @@
 .city_body{
     width: 100%;
     display: flex;
-    margin-top:97px;
+    margin-top:30px;
     position: absolute;
     top:0;
     bottom:0;
+}
+.city_content{
+    width:100%;
 }
 .city_body .city_list{
     flex: 1;

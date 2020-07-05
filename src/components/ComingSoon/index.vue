@@ -1,73 +1,127 @@
 <template>
     <div class="movie_body">
-        <ul>
-            <li>
-                <div class="pic_show"><img src="../../../public/images/movie_1.jpg" alt=""></div>
-                <div class="info_list">
-                    <h2>无名之辈</h2>
-                    <p>观众评 <span class="grade">9.2</span></p>
-                    <p>主演：陈建斌，任素汐，潘斌龙</p>
-                    <p>今天55家影院放映607场</p>
-                </div>
-                <div class="btn_pre">预订</div>
-            </li>
-            <li>
-                <div class="pic_show"><img src="../../../public/images/movie_2.jpg" alt=""></div>
-                <div class="info_list">
-                    <h2>毒液：致命守护者</h2>
-                    <p>观众评 <span class="grade">9.3</span></p>
-                    <p>主演：汤姆·哈迪，米歇尔·威廉姆斯，里兹·阿曼德</p>
-                    <p>今天56家影院放映443场</p>
-                </div>
-                <div class="btn_pre">预订</div>
-            </li>
-            <li>
-                <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
-                <div class="info_list">
-                    <h2>无名之辈</h2>
-                    <p>观众评 <span class="grade">9.2</span></p>
-                    <p>主演：陈建斌，任素汐，潘斌龙</p>
-                    <p>今天55家影院放映607场</p>
-                </div>
-                <div class="btn_pre">预订</div>
-            </li>
-            <li>
-                <div class="pic_show"><img src="../../../public/images/movie_1.jpg" alt=""></div>
-                <div class="info_list">
-                    <h2>无名之辈</h2>
-                    <p>观众评 <span class="grade">9.2</span></p>
-                    <p>主演：陈建斌，任素汐，潘斌龙</p>
-                    <p>今天55家影院放映607场</p>
-                </div>
-                <div class="btn_pre">预订</div>
-            </li>
-            <li>
-                <div class="pic_show"><img src="../../../public/images/movie_2.jpg" alt=""></div>
-                <div class="info_list">
-                    <h2>无名之辈</h2>
-                    <p>观众评 <span class="grade">9.2</span></p>
-                    <p>主演：陈建斌，任素汐，潘斌龙</p>
-                    <p>今天55家影院放映607场</p>
-                </div>
-                <div class="btn_pre">预订</div>
-            </li>
-            <li>
-                <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
-                <div class="info_list">
-                    <h2>无名之辈</h2>
-                    <p>观众评 <span class="grade">9.2</span></p>
-                    <p>主演：陈建斌，任素汐，潘斌龙</p>
-                    <p>今天55家影院放映607场</p>
-                </div>
-                <div class="btn_pre">预订</div>
-            </li>
-        </ul>
+        <Loading v-if="isLoading"></Loading>
+        <Scroller v-else>
+            <ul>
+                <li>
+                    <div class="pic_show"><img src="../../../public/images/movie_1.jpg" alt=""></div>
+                    <div class="info_list">
+                        <h2>无名之辈</h2>
+                        <p>观众评 <span class="grade">9.2</span></p>
+                        <p>主演：陈建斌，任素汐，潘斌龙</p>
+                        <p>今天55家影院放映607场</p>
+                    </div>
+                    <div class="btn_pre">预订</div>
+                </li>
+                <li>
+                    <div class="pic_show"><img src="../../../public/images/movie_2.jpg" alt=""></div>
+                    <div class="info_list">
+                        <h2>毒液：致命守护者</h2>
+                        <p>观众评 <span class="grade">9.3</span></p>
+                        <p>主演：汤姆·哈迪，米歇尔·威廉姆斯，里兹·阿曼德</p>
+                        <p>今天56家影院放映443场</p>
+                    </div>
+                    <div class="btn_pre">预订</div>
+                </li>
+                <li>
+                    <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
+                    <div class="info_list">
+                        <h2>无名之辈</h2>
+                        <p>观众评 <span class="grade">9.2</span></p>
+                        <p>主演：陈建斌，任素汐，潘斌龙</p>
+                        <p>今天55家影院放映607场</p>
+                    </div>
+                    <div class="btn_pre">预订</div>
+                </li>
+                <li>
+                    <div class="pic_show"><img src="../../../public/images/movie_1.jpg" alt=""></div>
+                    <div class="info_list">
+                        <h2>无名之辈</h2>
+                        <p>观众评 <span class="grade">9.2</span></p>
+                        <p>主演：陈建斌，任素汐，潘斌龙</p>
+                        <p>今天55家影院放映607场</p>
+                    </div>
+                    <div class="btn_pre">预订</div>
+                </li>
+                <li>
+                    <div class="pic_show"><img src="../../../public/images/movie_2.jpg" alt=""></div>
+                    <div class="info_list">
+                        <h2>无名之辈</h2>
+                        <p>观众评 <span class="grade">9.2</span></p>
+                        <p>主演：陈建斌，任素汐，潘斌龙</p>
+                        <p>今天55家影院放映607场</p>
+                    </div>
+                    <div class="btn_pre">预订</div>
+                </li>
+                <li>
+                    <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
+                    <div class="info_list">
+                        <h2>无名之辈</h2>
+                        <p>观众评 <span class="grade">9.2</span></p>
+                        <p>主演：陈建斌，任素汐，潘斌龙</p>
+                        <p>今天55家影院放映607场</p>
+                    </div>
+                    <div class="btn_pre">预订</div>
+                </li>
+                <li>
+                    <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
+                    <div class="info_list">
+                        <h2>无名之辈</h2>
+                        <p>观众评 <span class="grade">9.2</span></p>
+                        <p>主演：陈建斌，任素汐，潘斌龙</p>
+                        <p>今天55家影院放映607场</p>
+                    </div>
+                    <div class="btn_pre">预订</div>
+                </li>
+                <li>
+                    <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
+                    <div class="info_list">
+                        <h2>无名之辈</h2>
+                        <p>观众评 <span class="grade">9.2</span></p>
+                        <p>主演：陈建斌，任素汐，潘斌龙</p>
+                        <p>今天55家影院放映607场</p>
+                    </div>
+                    <div class="btn_pre">预订</div>
+                </li>
+                <li>
+                    <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
+                    <div class="info_list">
+                        <h2>无名之辈</h2>
+                        <p>观众评 <span class="grade">9.2</span></p>
+                        <p>主演：陈建斌，任素汐，潘斌龙</p>
+                        <p>今天55家影院放映607场</p>
+                    </div>
+                    <div class="btn_pre">预订</div>
+                </li>
+                <li>
+                    <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
+                    <div class="info_list">
+                        <h2>无名之辈</h2>
+                        <p>观众评 <span class="grade">9.2</span></p>
+                        <p>主演：陈建斌，任素汐，潘斌龙</p>
+                        <p>今天55家影院放映607场</p>
+                    </div>
+                    <div class="btn_pre">预订</div>
+                </li>
+            </ul>
+        </Scroller>
     </div>
 </template>
 
 <script>
     export default {
-        name: "CommingSoon"
+        name: "CommingSoon",
+        data(){
+            return {
+                isLoading:true
+            }
+        },
+        mounted(){
+            setTimeout(()=>{
+                this.isLoading= false;
+            },500)
+
+        }
     }
 </script>
 

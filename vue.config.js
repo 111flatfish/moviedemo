@@ -1,3 +1,11 @@
 module.exports = {
-    publicPath:"./"
+    publicPath:"./",
+    devServer : {
+        proxy : {
+            '/api' : {
+                target : 'http://pv.sohu.com/cityjson',
+                changeOrigin : true
+            }
+        }
+    }
 }
