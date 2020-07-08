@@ -28,6 +28,7 @@
     margin-top:-60px;
     font-size:18px;
     border-radius:4px;
+    z-index: 200;
 }
     .messageBox h1{
         font-size: 18px;

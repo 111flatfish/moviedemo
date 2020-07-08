@@ -2,38 +2,21 @@
     <div class="search_body">
         <div class="search_input">
             <div class="search_input_wrapper">
-                <i class="iconfont icon-search"></i>
-                <input type="text">
+                <i class="iconfont icon-search" @touchstart="search" ></i>
+                <input type="text" v-model="inputVal" @keydown.enter="search" @change="search">
             </div>
         </div>
         <div class="search_result">
             <h3>电影/电视剧/综艺</h3>
+            <Loading v-if="isloading"></Loading>
             <ul>
-                <li>
-                    <div class="img"><img src="../../../public/images/movie_1.jpg" alt=""></div>
+                <li v-for="item in movies">
+                    <div class="img"><img :src="item.images.large" alt=""></div>
                     <div class="info">
-                        <p><span>无名之辈</span></p>
-                        <p>A Cool Fish</p>
-                        <p>剧情、戏剧、犯罪</p>
-                        <p>2018-11-16</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><img src="../../../public/images/movie_1.jpg" alt=""></div>
-                    <div class="info">
-                        <p><span>无名之辈</span></p>
-                        <p>A Cool Fish</p>
-                        <p>剧情、戏剧、犯罪</p>
-                        <p>2018-11-16</p>
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><img src="../../../public/images/movie_1.jpg" alt=""></div>
-                    <div class="info">
-                        <p><span>无名之辈</span></p>
-                        <p>A Cool Fish</p>
-                        <p>剧情、戏剧、犯罪</p>
-                        <p>2018-11-16</p>
+                        <p class="title">{{item.title}}</p>
+                        <p>评分 <span style="font-size: 16px;color:#faaf00;margin-left:10px">{{item.rating.average}}</span></p>
+                        <p>{{item.genres|nameFormat}}</p>
+                        <p>导演 {{item.directors[0].name}}</p>
                     </div>
                 </li>
             </ul>
@@ -43,7 +26,35 @@
 
 <script>
     export default {
-        name: "Search"
+        name: "Search",
+        data(){
+          return {
+              inputVal:"",
+              movies:[],
+              timer:null,
+              isloading:false
+          }
+        },
+        methods:{
+            search(){
+                let that = this;
+                this.isloading = true;
+                clearTimeout(this.timer);
+                this.timer =  setTimeout(()=>{
+                    that.axios.get(`http://106.55.12.204/search?key=${that.inputVal}`).then(res=>{
+                        if(res.data.subjects){
+                            that.movies = res.data.subjects;
+                            that.isloading = false;
+                        }
+                    });
+                },300)
+            }
+        },
+        filters:{
+            nameFormat(val){
+                return val.join("、");
+            }
+        }
     }
 </script>
 
@@ -96,13 +107,24 @@
 .search_body .search_result .info{
     float: left;
     margin-left: 15px;
-    flex: 1;
+    /*flex: 1;*/
+    width: 80%;
 }
 .search_body .search_result .info p{
     height: 22px;
-    display: flex;
+    /*display: flex;*/
     line-height: 22px;
     font-size: 12px;
+}
+.search_body .search_result .info p span{
+    margin:0 10px 0 0;
+}
+.search_body .search_result .info .title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break:keep-all;
+    font-size: 18px;
 }
 .search_body .search_result .info p:nth-of-type(1) span:nth-of-type(1){
     flex: 1;

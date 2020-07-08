@@ -3,103 +3,13 @@
         <Loading v-if="isLoading"></Loading>
         <Scroller v-else>
             <ul>
-                <li>
-                    <div class="pic_show"><img src="../../../public/images/movie_1.jpg" alt=""></div>
+                <li v-for="item in movies">
+                    <div class="pic_show" @tap="toDetail"><img :src="item.images.small" alt=""></div>
                     <div class="info_list">
-                        <h2>无名之辈</h2>
-                        <p>观众评 <span class="grade">9.2</span></p>
-                        <p>主演：陈建斌，任素汐，潘斌龙</p>
-                        <p>今天55家影院放映607场</p>
-                    </div>
-                    <div class="btn_pre">预订</div>
-                </li>
-                <li>
-                    <div class="pic_show"><img src="../../../public/images/movie_2.jpg" alt=""></div>
-                    <div class="info_list">
-                        <h2>毒液：致命守护者</h2>
-                        <p>观众评 <span class="grade">9.3</span></p>
-                        <p>主演：汤姆·哈迪，米歇尔·威廉姆斯，里兹·阿曼德</p>
-                        <p>今天56家影院放映443场</p>
-                    </div>
-                    <div class="btn_pre">预订</div>
-                </li>
-                <li>
-                    <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
-                    <div class="info_list">
-                        <h2>无名之辈</h2>
-                        <p>观众评 <span class="grade">9.2</span></p>
-                        <p>主演：陈建斌，任素汐，潘斌龙</p>
-                        <p>今天55家影院放映607场</p>
-                    </div>
-                    <div class="btn_pre">预订</div>
-                </li>
-                <li>
-                    <div class="pic_show"><img src="../../../public/images/movie_1.jpg" alt=""></div>
-                    <div class="info_list">
-                        <h2>无名之辈</h2>
-                        <p>观众评 <span class="grade">9.2</span></p>
-                        <p>主演：陈建斌，任素汐，潘斌龙</p>
-                        <p>今天55家影院放映607场</p>
-                    </div>
-                    <div class="btn_pre">预订</div>
-                </li>
-                <li>
-                    <div class="pic_show"><img src="../../../public/images/movie_2.jpg" alt=""></div>
-                    <div class="info_list">
-                        <h2>无名之辈</h2>
-                        <p>观众评 <span class="grade">9.2</span></p>
-                        <p>主演：陈建斌，任素汐，潘斌龙</p>
-                        <p>今天55家影院放映607场</p>
-                    </div>
-                    <div class="btn_pre">预订</div>
-                </li>
-                <li>
-                    <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
-                    <div class="info_list">
-                        <h2>无名之辈</h2>
-                        <p>观众评 <span class="grade">9.2</span></p>
-                        <p>主演：陈建斌，任素汐，潘斌龙</p>
-                        <p>今天55家影院放映607场</p>
-                    </div>
-                    <div class="btn_pre">预订</div>
-                </li>
-                <li>
-                    <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
-                    <div class="info_list">
-                        <h2>无名之辈</h2>
-                        <p>观众评 <span class="grade">9.2</span></p>
-                        <p>主演：陈建斌，任素汐，潘斌龙</p>
-                        <p>今天55家影院放映607场</p>
-                    </div>
-                    <div class="btn_pre">预订</div>
-                </li>
-                <li>
-                    <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
-                    <div class="info_list">
-                        <h2>无名之辈</h2>
-                        <p>观众评 <span class="grade">9.2</span></p>
-                        <p>主演：陈建斌，任素汐，潘斌龙</p>
-                        <p>今天55家影院放映607场</p>
-                    </div>
-                    <div class="btn_pre">预订</div>
-                </li>
-                <li>
-                    <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
-                    <div class="info_list">
-                        <h2>无名之辈</h2>
-                        <p>观众评 <span class="grade">9.2</span></p>
-                        <p>主演：陈建斌，任素汐，潘斌龙</p>
-                        <p>今天55家影院放映607场</p>
-                    </div>
-                    <div class="btn_pre">预订</div>
-                </li>
-                <li>
-                    <div class="pic_show"><img src="../../../public/images/movie_3.jpg" alt=""></div>
-                    <div class="info_list">
-                        <h2>无名之辈</h2>
-                        <p>观众评 <span class="grade">9.2</span></p>
-                        <p>主演：陈建斌，任素汐，潘斌龙</p>
-                        <p>今天55家影院放映607场</p>
+                        <h2 @tap="toDetail">{{item.title}}</h2>
+                        <p>观众评 <span class="grade">{{item.rating.average}}</span></p>
+                        <p>主演：<span v-for="item2 in item.casts">{{item2.name}}</span></p>
+                        <p>预定人数 {{item.collect_count}}</p>
                     </div>
                     <div class="btn_pre">预订</div>
                 </li>
@@ -113,14 +23,27 @@
         name: "CommingSoon",
         data(){
             return {
-                isLoading:true
+                isLoading:true,
+                movies:[]
             }
         },
         mounted(){
-            setTimeout(()=>{
-                this.isLoading= false;
-            },500)
+            let that = this;
+            $.ajax({
+                type:"get",
+                url:`https://api.douban.com/v2/movie/new_movies?apikey=0df993c66c0c636e29ecbb5344252a4a`,
+                dataType:"jsonp",
+                success:function (data) {
+                    that.movies = data.subjects;
+                    that.isLoading= false;
+                }
+            });
 
+        },
+        methods:{
+            toDetail(){
+                this.$router.push("/movie/detail/2");
+            }
         }
     }
 </script>
@@ -170,6 +93,9 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
+    }
+    .movie_body .info_list p span{
+        margin:0 10px 0 0;
     }
     .movie_body .info_list .grade{
         font-size: 15px;

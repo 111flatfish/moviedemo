@@ -3,8 +3,7 @@ module.exports = {
     devServer : {
         proxy : {
             '/api' : {
-                target : 'http://pv.sohu.com/cityjson',
-                changeOrigin : true
+                target : 'http://pv.sohu.com/',
             }
         }
     }
