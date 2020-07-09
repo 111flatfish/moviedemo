@@ -2,7 +2,7 @@
     <div class="search_body">
         <div class="search_input">
             <div class="search_input_wrapper">
-                <i class="iconfont icon-search" @touchstart="search" ></i>
+                <i class="iconfont icon-search" @click="search" ></i>
                 <input type="text" v-model="inputVal" @keydown.enter="search" @change="search">
             </div>
         </div>

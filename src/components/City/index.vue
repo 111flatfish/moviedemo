@@ -1,10 +1,10 @@
 <template>
     <div>
 <!--        <mt-picker style="width:100%" :solts="backSlots" value-key="text" showToolbar ref="picker" @change="onMyAddressChange"></mt-picker>-->
-        <mt-button type="default" style="position: absolute;top:40%;z-index: 100;width: 80%;left: 50%;margin-left:-40%;" @touchstart="showPicker" @click="showPicker">重新定位</mt-button>
+        <mt-button type="default" style="position: absolute;top:40%;z-index: 100;width: 80%;left: 50%;margin-left:-40%;" @click="showPicker">重新定位</mt-button>
         <mt-picker v-if="isShowPicker" style="width: 100%;position: absolute;top:50%;z-index: 100;background:#fff;" show-toolbar :slots="myAddressSlots" value-key="text"  ref="picker" @change="onMyAddressChange">
-            <span @click="cancel" @touchstart="cancel" class="pickerToolbar">取消</span>
-            <span @click="changeCity" @touchstart="changeCity" class="pickerToolbar">确认</span>
+            <span @click="cancel"  class="pickerToolbar">取消</span>
+            <span @click="changeCity" class="pickerToolbar">确认</span>
         </mt-picker>
             <div class="city_body">
                 <Loading v-if="isLoading"></Loading>

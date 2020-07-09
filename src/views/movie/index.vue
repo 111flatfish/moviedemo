@@ -69,7 +69,7 @@
                     if(this.city.cname == window.localStorage.getItem("nowCity")){
                         return;
                     }else {
-                        if(this.city.cname == "CHINA"){
+                        if(this.city.cname == "CHIN"){
                             messageBox({
                                 title:"定位",
                                 city:`定位失败`,

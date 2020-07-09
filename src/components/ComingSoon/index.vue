@@ -4,9 +4,9 @@
         <Scroller v-else>
             <ul>
                 <li v-for="item in movies">
-                    <div class="pic_show" @tap="toDetail"><img :src="item.images.small" alt=""></div>
+                    <div class="pic_show" @tap="toDetail(item.id)" @click="toDetail(item.id)"><img :src="item.images.small" alt=""></div>
                     <div class="info_list">
-                        <h2 @tap="toDetail">{{item.title}}</h2>
+                        <h2 @tap="toDetail(item.id)" @click="toDetail(item.id)">{{item.title}}</h2>
                         <p>观众评 <span class="grade">{{item.rating.average}}</span></p>
                         <p>主演：<span v-for="item2 in item.casts">{{item2.name}}</span></p>
                         <p>预定人数 {{item.collect_count}}</p>
@@ -41,8 +41,8 @@
 
         },
         methods:{
-            toDetail(){
-                this.$router.push("/movie/detail/2");
+            toDetail(id){
+                this.$router.push("/movie/detail/2/"+id);
             }
         }
     }

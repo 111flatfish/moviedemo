@@ -5,6 +5,7 @@ module.exports = {
             '/api' : {
                 target : 'http://pv.sohu.com/',
             }
-        }
+        },
+        port:90
     }
 }

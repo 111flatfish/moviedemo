@@ -1,12 +1,12 @@
 <template>
     <div id="detailContainer" class="slideToDetail">
         <Header title="影片详情">
-            <i class="iconfont icon-arrow_left" @touchstart="back"></i>
+            <i class="iconfont icon-arrow_left" @touchstart="back" @click="back"></i>
         </Header>
         <Loading v-if="isloading"></Loading>
         <div id="content" class="contentDetail" v-else>
             <div class="detail_list">
-                <div class="detail_list_bg"></div>
+                <div class="detail_list_bg" :style="{background:'url('+movieData.images.large+')'}"></div>
                 <div class="detail_list_filter"></div>
                 <div class="detail_list_content">
                     <div class="detail_list_img">
@@ -112,7 +112,7 @@
     .detail_list_bg{
         width:100%;
         height:100%;
-        background:url("../../../public/images/movie_1.jpg") 0 40%;
+
         filter:blur(20px);
         background-size:cover;
         position:absolute;
