@@ -7,11 +7,18 @@ import Scroller from "./components/Scroller"
 import Loading from "./components/Loading"
 import MintUI from "mint-ui"
 import "mint-ui/lib/style.min.css"
+import {Form,Field,Button,CouponCell, CouponList,Popup} from "vant"
 Vue.config.productionTip = false
 Vue.prototype.axios = axios;
 Vue.component("Scroller",Scroller);
 Vue.component("Loading",Loading);
 Vue.use(MintUI);
+Vue.use(Form);
+Vue.use(Field);
+Vue.use(Button);
+Vue.use(CouponCell);
+Vue.use(CouponList);
+Vue.use(Popup);
 Vue.filter("nameFormat",function (val) {
   return val.join("、");
 });

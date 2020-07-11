@@ -41,7 +41,7 @@
                 this.isloading = true;
                 clearTimeout(this.timer);
                 this.timer =  setTimeout(()=>{
-                    that.axios.get(`http://106.55.12.204/search?key=${that.inputVal}`).then(res=>{
+                    that.axios.get(`http://106.55.12.204:81/search?key=${that.inputVal}`).then(res=>{
                         if(res.data.subjects){
                             that.movies = res.data.subjects;
                             that.isloading = false;

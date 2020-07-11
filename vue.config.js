@@ -1,9 +1,14 @@
 module.exports = {
-    publicPath:"./",
+    publicPath:"/",
     devServer : {
+        // disableHostCheck:true,
         proxy : {
-            '/api' : {
-                target : 'http://pv.sohu.com/',
+            "/api":{
+                target:"http://localhost:3000",
+                changeOrigin:true,
+                pathRewrite:{
+                    "^/api":''
+                }
             }
         },
         port:90

@@ -72,7 +72,7 @@
                         if(this.city.cname == "CHIN"){
                             messageBox({
                                 title:"定位",
-                                city:`定位失败`,
+                                content:`定位失败`,
                                 cancel:"取消",
                                 ok:"切换",
                                 handleOk:()=>{
@@ -85,7 +85,7 @@
                         }else {
                             messageBox({
                                 title:"定位",
-                                city:`${this.city.cname}`,
+                                content:`${this.city.cname}`,
                                 cancel:"取消",
                                 ok:"切换",
                                 handleOk:()=>{

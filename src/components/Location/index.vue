@@ -1,10 +1,10 @@
 <template>
     <div class="messageBox">
         <h2>{{title}}</h2>
-        <p>{{city}}</p>
+        <p>{{content}}</p>
         <div>
-            <p @click="handleOk">{{ok}}</p>
-            <p @click="handleCancel">{{cancel}}</p>
+            <p @click="handleOk" v-if="ok">{{ok}}</p>
+            <p @click="handleCancel" v-if="cancel">{{cancel}}</p>
         </div>
     </div>
 </template>

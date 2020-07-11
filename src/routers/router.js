@@ -7,8 +7,8 @@ import MineRouter from "./mine"
 Vue.use(Router)
 
 export default new Router({
-
   base: process.env.BASE_URL,
+  // base:"/miaomiao",
   routes: [
     MovieRouter,
     CinemaRouter,

@@ -1,5 +1,26 @@
 export default {
     path:"/mine",
-    component:()=>import("../../views/mine")
-
+    component:()=>import("../../views/mine"),
+    children:[
+        {
+            path:"center",
+            component:()=>import("@/views/mine/center")
+        },
+        {
+            path:"login",
+            component:()=>import("@/components/Login")
+        },
+        {
+            path:"register",
+            component:()=>import("@/components/Register")
+        },
+        {
+            path:"findpassword",
+            component:()=>import("@/components/FindPassword")
+        },
+        {
+            path:"/mine",
+            redirect:"center"
+        }
+    ]
 }

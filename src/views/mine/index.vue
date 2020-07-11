@@ -1,7 +1,7 @@
 <template>
     <div>
         <Header title="我的电影"></Header>
-        <Login></Login>
+        <router-view></router-view>
         <Toolbar></Toolbar>
     </div>
 </template>

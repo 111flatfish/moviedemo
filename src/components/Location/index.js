@@ -2,15 +2,15 @@ import Vue from "vue"
 import location from "./index.vue"
 
 export let messageBox = (function(){
-    let defaults ={
-        title:"",
-        city:"",
-        cancel:"",
-        ok:"",
-        handleOk:null,
-        handleCancel:null
-    }
     return function (opts) {
+        let defaults ={
+            title:"",
+            content:"",
+            cancel:"",
+            ok:"",
+            handleOk:null,
+            handleCancel:null
+        }
         for(let keys in defaults){
             defaults[keys] = opts[keys];
         }
@@ -20,7 +20,7 @@ export let messageBox = (function(){
             data(){
                 return {
                     title:defaults.title,
-                    city:defaults.city,
+                    content:defaults.content,
                     cancel:defaults.cancel,
                     ok:defaults.ok
                 }

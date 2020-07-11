@@ -19,7 +19,7 @@
 
 <script>
 
-// import { messageBox } from '@/components/JS';
+import { messageBox } from '@/components/Location/index.js';
 
 export default {
     name : 'Login',
@@ -32,7 +32,23 @@ export default {
     },
     methods:{
         handleToLogin(){
-            
+            let that = this;
+            this.axios.post("/api/login",{
+                username:this.username,
+                passward:this.password
+            }).then(res=>{
+                console.log(res.data);
+                if(res.data.status == 0){
+                    messageBox({
+                        title:"登录",
+                        content:res.data.msg,
+                        ok:"确认",
+                        handleOk(){
+                            that.$router.push({path:"/mine/center"});
+                        }
+                    });
+                }
+            });
         }
     }
     // methods : {
